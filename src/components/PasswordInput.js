@@ -1,23 +1,20 @@
-import React from "react";
-import { Component } from "react";
-import Input from "./Input";
+import React from 'react'
+import Input from './Input'
 
-class PasswordInput extends Component {
-    value = this.props.value
-    required = this.props.required
-    name = this.props.name
-    handleChange = this.props.onChange
-    render() { 
-        return (
-            <Input 
-                type="password"
-                value={this.value}
-                required={this.required}
-                name={this.name}
-                onChange={this.handleChange}
-            />
-        );
-    }
+function PasswordInput (props) {
+  const value = props.value
+  const required = props.required
+  const name = props.name
+  const handleChange = props.onChange
+  return (
+    <Input
+      type="password"
+      value={value}
+      required={required}
+      name={name}
+      onChange={handleChange}
+    />
+  )
 }
- 
-export default PasswordInput;
+
+export default PasswordInput

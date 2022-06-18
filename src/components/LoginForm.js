@@ -1,25 +1,24 @@
-import React from "react";
-import { Component } from "react";
-import PasswordInput from "./PasswordInput"
-import TextInput from "./TextInput";
+import React, { useState } from 'react'
+import PasswordInput from './PasswordInput'
+import TextInput from './TextInput'
 
-class LoginForm extends Component {
-    state = { username: '', password: '' } 
-    handleUsernameChange = (username) => this.setState({username})
-    handlePasswordChange = (password) => this.setState({password})
-    handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(this.state)
-    }
-    render() { 
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <TextInput name="Username" required={true} value={this.state.username} onChange={this.handleUsernameChange}/>
-                <PasswordInput name="Password" required={true} value={this.state.password} onChange={this.handlePasswordChange}/>
-                <button type="submit">submit</button>
-            </form>
-        );
-    }
+function LoginForm () {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const handleUsernameChange = (username) => setUsername(username)
+  const handlePasswordChange = (password) => setPassword(password)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log({ username, password })
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextInput name="Username" required={true} value={username} onChange={handleUsernameChange} />
+      <PasswordInput name="Password" required={true} value={password} onChange={handlePasswordChange} />
+      <button type="submit">submit</button>
+    </form>
+
+  )
 }
- 
-export default LoginForm;
+
+export default LoginForm

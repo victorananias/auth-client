@@ -1,24 +1,21 @@
-import React from "react";
-import { Component } from "react";
-import Input from "./Input";
+import React from 'react'
+import Input from './Input'
 
-class TextInput extends Component {
-    value = this.props.value 
-    type = this.props.type 
-    required = this.props.required 
-    name = this.props.name
-    handleChange = this.props.onChange
-    render() { 
-        return (
-            <Input
-                value={this.value}
-                type={this.type}
-                required={this.required}
-                name={this.name}
-                onChange={this.handleChange}
-             />
-        );
-    }
+function TextInput (props) {
+  const value = props.value
+  const type = props.type
+  const required = props.required
+  const name = props.name
+  const handleChange = props.onChange
+  return (
+    <Input
+      value={value}
+      type={type}
+      required={required}
+      name={name}
+      onChange={handleChange}
+    />
+  )
 }
- 
-export default TextInput;
+
+export default TextInput

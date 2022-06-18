@@ -1,15 +1,15 @@
-import LoginForm from 'components/LoginForm';
-import React from 'react';
-import './App.css';
+import LoginForm from 'components/LoginForm'
+import React from 'react'
+import './App.css'
 
-function App() {
+function App () {
   return (
     <div className="columns is-centered">
       <div className="column is-half">
         <LoginForm />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

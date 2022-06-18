@@ -1,29 +1,26 @@
-import React from "react";
-import { Component } from "react";
+import React from 'react'
 
-class Input extends Component {
-    name = this.props.name
-    value = this.props.value
-    required = this.props.required
-    type = this.props.type
-    handleChange = (event) => this.props.onChange(event.target.value)
-    render() {
-        return (
-            <div className="field">
-                <label className="label">{this.name}</label>
-                <div className="control">
-                    <input 
-                        className="input" 
-                        type={this.type} 
-                        name={this.name} 
-                        required={this.required} 
-                        defaultValue={this.value}
-                        onChange={this.handleChange}
-                    />
-                </div>
-            </div>
-        );
-    }
+function Input (props) {
+  const name = props.name
+  const value = props.value
+  const required = props.required
+  const type = props.type
+  const handleChange = (event) => props.onChange(event.target.value)
+  return (
+    <div className="field">
+      <label className="label">{name}</label>
+      <div className="control">
+        <input
+          className="input"
+          type={type}
+          name={name}
+          required={required}
+          defaultValue={value}
+          onChange={handleChange}
+        />
+      </div>
+    </div>
+  )
 }
- 
-export default Input;
+
+export default Input
