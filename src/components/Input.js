@@ -1,11 +1,7 @@
 import React from 'react'
 
-function Input (props) {
-  const name = props.name
-  const value = props.value
-  const required = props.required
-  const type = props.type
-  const handleChange = (event) => props.onChange(event.target.value)
+function Input ({ name, value, required, type, onChange }) {
+  const handleChange = (event) => onChange(event.target.value)
   return (
     <div className="field">
       <label className="label">{name}</label>

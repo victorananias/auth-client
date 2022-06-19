@@ -1,15 +1,14 @@
-import LoginForm from 'components/LoginForm'
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 import './App.css'
 
 function App () {
   return (
-    <div className="columns is-centered">
-      <div className="column is-half">
-        <LoginForm />
-      </div>
-    </div>
+    <>
+      <Outlet />
+    </>
   )
 }
+
 
 export default App
